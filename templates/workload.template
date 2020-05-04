@@ -10,7 +10,7 @@ Resources:
               SSEAlgorithm: aws:kms
               KMSMasterKeyID: alias/aws/s3
       LoggingConfiguration: {}
-  s3BucketPolicy:
+  MyBucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
       Bucket:
@@ -24,7 +24,7 @@ Resources:
             Action:
               - s3:GetObject
             Resource:
-              Fn::Join: [ '', [ Fn::GetAtt: [ MyS3Bucket, Arn ], '/Contracts/*' ] ]
+              Fn::Join:['', [Fn::GetAtt:[ MyBucket, Arn ], '/Contracts/*'] ]
             Condition:
               StringLike:
                 aws:Referer:
