@@ -1,9 +1,9 @@
 global:
-  owner: JasonAGiles
+  owner: jihed
   qsname: aws-cloudformation-pipeline-example
   regions:
     - eu-east-1
 tests:
-  us-regions:
+  eu-regions:
     template_file: workload.template
     parameter_input: input.json
