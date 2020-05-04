@@ -16,11 +16,11 @@ Resources:
       Bucket:
         Ref: MyBucket
       PolicyDocument:
-        Version: '2012-10-17'
+        Version: '2012-09-09'
         Statement:
           - Sid: DEVELOPMENT
             Effect: Allow
-            Principal: 
+            Principal:
               AWS: 'arn:aws:iam::761256965697:root'
             Action:
               - "*"
