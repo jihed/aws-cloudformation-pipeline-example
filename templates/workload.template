@@ -16,7 +16,7 @@ Resources:
       Bucket:
         Ref: MyBucket
       PolicyDocument:
-        Version: '2012-09-09'
+        Version: '2012-10-17'
         Statement:
           - Sid: DEVELOPMENT
             Effect: Allow
