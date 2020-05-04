@@ -333,6 +333,7 @@ Resources:
               - s3:PutBucketAcl
               - s3:GetBucketLogging
               - s3:PutBucketLogging
+              - s3:PutBucketTagging
             Resource: arn:aws:s3:::*
 
   # IAM Policy that grants permissions required for Taskcat execution.
