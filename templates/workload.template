@@ -23,5 +23,5 @@ Resources:
             Principal:
               AWS: 'arn:aws:iam::761256965697:root'
             Action:
-              - "*"
+              - "s3:DeleteObject"
             Resource: !Sub '${MyBucket.Arn}/*'
