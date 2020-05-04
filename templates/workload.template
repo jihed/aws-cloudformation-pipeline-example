@@ -19,7 +19,7 @@ Resources:
         Version: '2012-10-17'
         Statement:
           - Sid: DEVELOPMENT
-            Effect: Allow
+            Effect: Deny
             Principal:
               AWS: 'arn:aws:iam::761256965697:root'
             Action:
