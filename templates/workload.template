@@ -18,15 +18,10 @@ Resources:
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
-          - Sid: DEVELOPMENT ONLY - Allow get requests originating from localhost.
-            Effect: Deny
-            Principal: '*'
+          - Sid: DEVELOPMENT
+            Effect: Allow
+            Principal: 
+              AWS: 'arn:aws:iam::761256965697:root'
             Action:
-              - s3:GetObject
-            Resource:
-              Fn::Join:['', [Fn::GetAtt:[ MyBucket, Arn ], '/Contracts/*'] ]
-            Condition:
-              StringLike:
-                aws:Referer:
-                  - 'http://localhost:*/*'
-                  - 'https://localhost:*/*'
+              - "*"
+            Resource: !Sub '${MyBucket.Arn}/*'

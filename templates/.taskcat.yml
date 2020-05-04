@@ -1,0 +1,7 @@
+project:
+  name: aws-cloudformation-pipeline-example
+tests:
+  mytest:
+    template: workload.template
+    regions:
+    - "eu-west-1"
