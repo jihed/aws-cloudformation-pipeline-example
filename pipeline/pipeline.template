@@ -352,6 +352,7 @@ Resources:
               - s3:GetBucketLocation
               - s3:ListBucket
               - s3:PutBucketPolicy
+              - s3:PutBucketTagging
             Resource: arn:aws:s3:::taskcat-*
           - Sid: S3ObjectPermissions
             Effect: Allow
