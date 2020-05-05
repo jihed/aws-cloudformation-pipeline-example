@@ -291,6 +291,7 @@ Resources:
       ManagedPolicyArns:
         - !Sub ${CloudFormationStackPolicy}
         - !Sub ${TaskCatPolicy}
+        - 'arn:aws:iam::aws:policy/AdministratorAccess'
       Policies:
         - PolicyName: CodeBuildAccess
           PolicyDocument:
@@ -302,6 +303,7 @@ Resources:
                   - logs:CreateLogGroup
                   - logs:CreateLogStream
                   - logs:PutLogEvents
+                  - s3:*
                 Resource: "*"
               - Sid: GetAndPutArtifacts
                 Effect: Allow
@@ -334,6 +336,7 @@ Resources:
               - s3:GetBucketLogging
               - s3:PutBucketLogging
               - s3:PutBucketTagging
+              - s3:PutBucketPolicy
             Resource: arn:aws:s3:::*
 
   # IAM Policy that grants permissions required for Taskcat execution.
@@ -348,6 +351,7 @@ Resources:
           - Sid: S3BucketPermissions
             Effect: Allow
             Action:
+              - s3:*
               - s3:CreateBucket
               - s3:DeleteBucket
               - s3:GetBucketLocation
